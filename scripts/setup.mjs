@@ -1,0 +1,7 @@
+import {readFileSync,writeFileSync,existsSync} from 'node:fs';
+import {randomBytes} from 'node:crypto';
+import {createInterface} from 'node:readline/promises';
+import {hashCode} from '../server/security.mjs';
+if(existsSync('.env')){console.log('.env already exists; left unchanged. Edit it manually to update MongoDB settings.');process.exit(0)}
+const rl=createInterface({input:process.stdin,output:process.stdout});
+try{console.log('Obsidian Studio Pro setup — settings stay in your local .env file.');const uri=(await rl.question('MongoDB connection URI (blank = local MongoDB): ')).trim()||'mongodb://127.0.0.1:27017';if(!/^mongodb(\+srv)?:\/\//.test(uri))throw Error('Enter a valid MongoDB URI.');const code=(await rl.question('Choose your access code (6–12 digits): ')).trim();const hash=hashCode(code);const db=(await rl.question('Database name [obsidian_studio]: ')).trim()||'obsidian_studio';if(!/^[a-zA-Z0-9_-]+$/.test(db))throw Error('Use letters, numbers, underscore or hyphen in the database name.');let text=readFileSync('.env.example','utf8').replace(/^MONGODB_URI=.*$/m,()=> 'MONGODB_URI='+JSON.stringify(uri)).replace(/^MONGODB_DB=.*$/m,'MONGODB_DB='+db).replace(/^ACCESS_CODE_HASH=.*$/m,'ACCESS_CODE_HASH='+hash).replace(/^SESSION_SECRET=.*$/m,'SESSION_SECRET='+randomBytes(48).toString('hex'));writeFileSync('.env',text,{mode:0o600,flag:'wx'});console.log('Setup saved. Run npm run check-db, npm run build, then npm start.')}catch(e){console.error(e.message);process.exitCode=1}finally{rl.close()}

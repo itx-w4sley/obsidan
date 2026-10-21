@@ -1,0 +1,22 @@
+/* EASY THEME EDITING: change colours, radii, and spacing here. */
+:root { --studio-radius: 11px; --studio-soft-radius: 16px; }
+.nav,.primary,.secondary,.settingscard,.taskcard,.template,.projectcard { border-radius:var(--studio-radius); }
+.primary { background:var(--purple); }
+.brandmark { background:var(--purple); }
+.nav.active { color:var(--purple);background:color-mix(in srgb,var(--purple) 12%,transparent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--purple) 20%,transparent); }
+.nav small { background:color-mix(in srgb,var(--purple) 13%,transparent); }
+.login h1 span,.lockicon,.miniicon,.empty button,.textbutton { color:var(--purple); }
+.lockicon { border-color:color-mix(in srgb,var(--purple) 25%,transparent); }
+.login input:focus { border-color:var(--purple); }
+.studio-settings .settingscard { border-radius:var(--studio-soft-radius); }
+.studio-settings .settingscard h2 { display:flex;align-items:center;gap:9px; }
+.studio-settings .settingscard>p { margin:11px 0 18px; }
+.studio-form { display:grid;gap:15px;margin-top:18px; }
+.studio-form label { display:grid;gap:7px;font-size:11px;font-weight:600;color:#b6b0c0; }
+.studio-form input { width:100%; }
+.studio-colour { display:flex;gap:10px;align-items:center; }
+.studio-colour input[type=color] { width:60px;min-width:60px;height:46px;padding:4px; }
+.studio-form-actions { display:flex;gap:9px;flex-wrap:wrap; }
+.studio-form .primary,.studio-form .secondary { font-size:12px; }
+.studio-settings .hint { margin-top:15px; }
+@media (max-width:700px) { .studio-form-actions .primary,.studio-form-actions .secondary{ flex:1; } }
