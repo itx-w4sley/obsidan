@@ -10,10 +10,10 @@ export const STUDIO = {
   loginTitle: 'Good ideas.',
   loginHighlight: 'Great execution.',
   loginDescription: 'Projects, tasks and your server identity.',
-  loginSubdescription: 'One code opens your whole studio.',
+  loginSubdescription: 'Your unique code opens the shared studio.',
   secureCaption: 'Secured by Techura AuthO2',
   footer: 'OBSIDIAN CUSTOMS',
-  userSubtitle: 'Personal workspace',
+  userSubtitle: 'Studio account',
   defaultPreferences: {
     workspaceName: 'Obsidian Studio Pro',
     userName: 'Joshua Wasley',
