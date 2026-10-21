@@ -1,16 +1,1 @@
-# MongoDB Atlas Configuration
-MONGODB_URI="mongodb+srv://wasleyjoshua3_db_user:rtGMJakIRgJ60Rb9@app1win.ic4kd49.mongodb.net/obsidian_studio_pro?retryWrites=true&w=majority"
-MONGODB_DB=obsidian_studio_pro
 
-# Authentication
-ACCESS_CODE_HASH=36dab4899248de17b275ff9a7544c220:49fb1a80f49432786c849c4f411f786f68398d272d05ae755ac04fa1374e076d67e17f2fabeb8910e59ff9aa96f79b7498d1d0b10444a64a721048aa7ee843ae
-SESSION_SECRET=e1087d93a4e88e5d2d943c52420fa4a60de2bf207b10a8e0bee7623a8e3468fc145360a46359a24d28d31888879063f6
-
-# Application Server
-PORT=3000
-HOST=127.0.0.1
-APP_ORIGIN=http://localhost:3000
-COOKIE_SECURE=false
-
-# Set 1 only behind exactly one trusted reverse proxy.
-TRUST_PROXY=0
